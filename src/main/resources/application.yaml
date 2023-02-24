@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /shift-lab
+spring:
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:inMemoryDb
+    username: h2
+    password: h2
+    driverClassName: org.h2.Driver
+  flyway:
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
